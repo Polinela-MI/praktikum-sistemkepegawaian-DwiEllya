@@ -1,55 +1,51 @@
 package Modul04;
+public class Karyawan {
+    private int nik;
+    private String namalengkap;
+    private int Gajipokok;
+    private int kehadiran;
 
-    public class Karyawan {
+    public Karyawan(int nik, String nama, int gajipokok) {
+        this.nik = nik;
+        this.namalengkap = nama;
+        this.Gajipokok = gajipokok;
+        this.kehadiran = kehadiran;
 
-        private int nik;
+    }
+    public int getNik() {
 
-        private String namaKaryawan;
-
-        private int gapok;
-
-        private int kehadiran;
-
-        private int gajiPerjam;
-
-        public Karyawan(int nik, String namaKaryawan, int gapok) {
-            this.nik = nik;
-            this.namaKaryawan = namaKaryawan;
-            this.gapok = gapok;
-            this.kehadiran = kehadiran;
-            this.gajiPerjam = gajiPerjam;
-        }
-
-        public int getNik() {
-            return nik;
-        }
-
-        public void setNik() {
-            this.nik = nik;
-        }
-
-        public String getNamaKaryawan() {
-            return namaKaryawan;
-        }
-
-        public void setNamaKaryawan(){
-            this.namaKaryawan = namaKaryawan;
-        }
-
-        public int getKehadiran(){
-            return kehadiran;
-        }
-
-        public void setKehadiran() {
-            this.kehadiran = kehadiran;
-        }
-
-        public int getGajiPerjam() {
-            return gajiPerjam;
-        }
-
-        public void setGajiPerjam(){
-            this.gajiPerjam = gajiPerjam;
-        }
+        return nik;
     }
 
+    public void setNik(int nik) {
+        this.nik = nik;
+    }
+
+    public String getNamaLengkap(){
+        return namalengkap;
+    }
+
+    public void setNamalengkap(String namalengkap) {
+        this.namalengkap = namalengkap;
+    }
+
+    public int gajiPokok() {
+        return Gajipokok;
+    }
+
+    public int getGajipokok() {
+        return Gajipokok;
+    }
+
+    public void perhitungangaji(){
+        double Tunjangan_Transportasi = Gajipokok * 0.025;
+        double Tunjangan_kinerja = Gajipokok * 0.1;
+        double Tunjangan_makan = 35000 * 20;
+        double TotalSebelumPajak = Gajipokok + Tunjangan_Transportasi+ Tunjangan_kinerja + Tunjangan_makan;
+
+        double pajak = TotalSebelumPajak* 0.025;
+        double total = TotalSebelumPajak - pajak;
+
+        System.out.println(" RP "  + total);
+    }
+}
